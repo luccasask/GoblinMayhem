@@ -12,6 +12,8 @@ public class MovementTopDown : MonoBehaviour //Gives movement to the player and 
 
     float horizontalMove = 0f;
     float verticalMove = 0f;
+
+    public Animator anim;
     public void Start()
     {
 
@@ -19,6 +21,8 @@ public class MovementTopDown : MonoBehaviour //Gives movement to the player and 
     void Update()
     {
         PlayerMovement();
+
+        anim.SetFloat("Vertical", verticalMove * Time.fixedDeltaTime);
     }
     void FixedUpdate()
     {
@@ -34,6 +38,7 @@ public class MovementTopDown : MonoBehaviour //Gives movement to the player and 
 
     public void PlayerMovement()
     {
+
         horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
         verticalMove = Input.GetAxisRaw("Vertical") * moveSpeed;
     }
