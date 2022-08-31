@@ -10,12 +10,15 @@ public class CameraFollowTopDown: MonoBehaviour //Makes the camera follow a targ
     private Vector3 targetPosition;
 
     public Transform target;
+    public GameObject targetG;
 
     public float camViewX = 3f, camViewY = 0.2f;
     private float camViewZ = -10;
 
     public void Start()
     {
+        targetG = GameObject.Find("Player");
+        target = targetG.transform;
     }
     void Update()
     {

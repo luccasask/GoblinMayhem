@@ -11,15 +11,13 @@ public class PlayerControllerTopDown : MonoBehaviour //Premade Player controller
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-	public bool isFlipped = false;
-
 	public Animator anim;
 
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
-	void Update()
+	void FixedUpdate()
 	{
 
 	}
@@ -27,17 +25,14 @@ public class PlayerControllerTopDown : MonoBehaviour //Premade Player controller
 	public void Move(float moveX, float moveY)
 	{
 
-		// Move the character by finding the target velocity
-		Vector3 targetVelocity = new Vector3(moveX * 10f, moveY * 10f, rb.velocity.y);
+			// Move the character by finding the target velocity
+			Vector3 targetVelocity = new Vector3(moveX * 10f, moveY * 10f, rb.velocity.y);
 
 		// And then smoothing it out and applying it to the character
 		rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
 		//Start run animation when moving
 		anim.SetFloat("Speed", rb.velocity.sqrMagnitude);
-
-
-
 		anim.SetFloat("Vertical", moveY * 10f);
 
 		// If the input is moving the player right and the player is facing left...
@@ -52,7 +47,6 @@ public class PlayerControllerTopDown : MonoBehaviour //Premade Player controller
 		{
 			// ... flip the player.
 			Flip();
-			isFlipped = true;
 		}
 	}
 
