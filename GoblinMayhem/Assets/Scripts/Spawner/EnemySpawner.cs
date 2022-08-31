@@ -5,12 +5,13 @@ using System.Linq;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public int EnemyID;
+    public int enemyIndex;
+    public float enemyAmount;
+
     public GameObject[] enemyPrefabs;
 
     private GameObject EnemyGroup;
-
-    private List<GameObject> A;
+    private GameObject enemy;
 
     void Start()
     {
@@ -20,29 +21,30 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown("1"))
         {
             SpawningEnemy();
         }
     }
-
     public void SpawningEnemy()
     {
-        GameObject enemy = Instantiate(enemyPrefabs[EnemyID], new Vector3(Random.Range(-40, 40), Random.Range(-30, 30), 0), Quaternion.identity);
-        enemy.name = enemyPrefabs[EnemyID].name;
+        if (gameObject.transform.childCount <= 0)
+        {
+            EnemyGroup = new GameObject();                                              //Makes New GameObject called EnemyGroup
+            EnemyGroup.transform.parent = GameObject.Find("EnemySpawner").transform;         //Makes New GameObject be a child of EnemySpawner gameobject
+            EnemyGroup.name = "EnemyType" + ": " + enemyPrefabs[enemyIndex].name;    //Renames the new gameobject to group of the specific enemy name);
+        }
 
-        EnemyGroup = new GameObject();                                              //Makes New GameObject called EnemyGroup
-        EnemyGroup.name = "EnemyType" + ": " + enemyPrefabs[EnemyID].name;    //Renames the new gameobject to group of the specific enemy name);
+        for (int i = 0; i <= enemyAmount; i++)
+        {
+            int rnd = Random.Range(0, 3);
 
-        EnemyGroup.transform.parent = GameObject.Find("EnemySpawner").transform;         //Makes New GameObject be a child of EnemySpawner gameobject
-        enemy.transform.parent = GameObject.Find(EnemyGroup.name).transform;            //Makes the instantiated enemy a child of its group object
+            enemy = Instantiate(
+                enemyPrefabs[rnd], new Vector3(Random.Range(-40, 40),Random.Range(-30, 30),0), Quaternion.identity);
+            enemy.name = enemyPrefabs[rnd].name;
+            enemy.transform.parent = GameObject.Find(EnemyGroup.name).transform;            //Makes the instantiated enemy a child of its group object
+        }
 
-        A = new List<GameObject>();
-
-        //for (int i = GameObject.Find("EnemySpawner").Length ; i > 1; i--)
-        //{
-        //    Destroy(EnemyGroup);
-        //}
 
     }
 }

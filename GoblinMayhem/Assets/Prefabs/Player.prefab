@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5924242771625378990}
-  moveSpeed: 114
+  moveSpeed: 33
   anim: {fileID: 4110845945163764398}
 --- !u!95 &4110845945163764398
 Animator:
