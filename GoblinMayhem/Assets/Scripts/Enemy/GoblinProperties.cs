@@ -17,6 +17,9 @@ public class GoblinProperties : MonoBehaviour
 
     private Animator animator;
 
+    private bool facingDown;  // For determining which way the player is currently facing.
+    public float goblinsTurnRadius = 0.1f;
+
     void Start()
     {
         playerG = GameObject.Find("Player");
@@ -40,7 +43,24 @@ public class GoblinProperties : MonoBehaviour
 
     public void MoveEnemy(Vector2 direction)
     {
-        animator.SetFloat(VerticalWrapMode, 1f);
+
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        animator.SetFloat("Speed", 1f);
+
+        //if goblin position is within a certain area/position
+        if (this.transform.position.y > (player.position.y - goblinsTurnRadius) && this.transform.position.y < (player.position.y + goblinsTurnRadius))
+        {
+            animator.SetFloat("Vertical", 0f);  //Goblin shows face
+        }
+        //if enemy is running upwards 
+        else if (movement.y > 0)
+        {
+            animator.SetFloat("Vertical", 1f); //Goblin shows back
+        }
+        //if enemy is running downwards
+        else if (movement.y < 0)
+        {
+            animator.SetFloat("Vertical", 0f);  //Goblin shows face
+        }
     }
 }

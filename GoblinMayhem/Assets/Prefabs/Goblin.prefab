@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0014604032, y: -0.0014604181}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6290546, y: 0.7517295}
+  m_Size: {x: 0.88, y: 0.88}
   m_EdgeRadius: 0
 --- !u!114 &9039849693596187328
 MonoBehaviour:
@@ -127,7 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e320bd0ff10cb4c43a8ebaf7a8a17e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 15
+  goblinsTurnRadius: 5
 --- !u!212 &675900279571254018
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -190,7 +191,7 @@ Animator:
   m_GameObject: {fileID: 5677093637005989294}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e00f1884006b3c04aabab8cc4b42fcad, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -3,7 +3,7 @@ guid: 76764e7b7f42139498720202ed97cc66
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -100,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -107,9 +120,9 @@ TextureImporter:
       name: PlayerRunAnimSprites_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 17
-        width: 15
+        x: 4
+        y: 16
+        width: 17
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -128,9 +141,9 @@ TextureImporter:
       name: PlayerRunAnimSprites_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 17
-        width: 15
+        x: 21
+        y: 16
+        width: 17
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -149,9 +162,9 @@ TextureImporter:
       name: PlayerRunAnimSprites_2
       rect:
         serializedVersion: 2
-        x: 30
-        y: 17
-        width: 15
+        x: 38
+        y: 16
+        width: 17
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -170,9 +183,9 @@ TextureImporter:
       name: PlayerRunAnimSprites_3
       rect:
         serializedVersion: 2
-        x: 45
-        y: 17
-        width: 15
+        x: 55
+        y: 16
+        width: 17
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -191,12 +204,12 @@ TextureImporter:
       name: PlayerRunAnimSprites_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 0
-        width: 15
+        width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,12 +225,12 @@ TextureImporter:
       name: PlayerRunAnimSprites_5
       rect:
         serializedVersion: 2
-        x: 15
+        x: 21
         y: 0
-        width: 15
+        width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -233,12 +246,12 @@ TextureImporter:
       name: PlayerRunAnimSprites_6
       rect:
         serializedVersion: 2
-        x: 30
+        x: 38
         y: 0
-        width: 15
+        width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,12 +267,12 @@ TextureImporter:
       name: PlayerRunAnimSprites_7
       rect:
         serializedVersion: 2
-        x: 45
+        x: 55
         y: 0
-        width: 15
+        width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
