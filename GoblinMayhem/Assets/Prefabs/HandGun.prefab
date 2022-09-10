@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5415958857588083923}
   m_Layer: 0
   m_Name: HandGun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   animator: {fileID: 8755655259590201951}
   shootingPoint: {fileID: 4242535695023093112}
   bulletForce: 5
-  isShooting: 0
+  muzzleFireDuration: 2
 --- !u!1 &3024752660441507078
 GameObject:
   m_ObjectHideFlags: 0

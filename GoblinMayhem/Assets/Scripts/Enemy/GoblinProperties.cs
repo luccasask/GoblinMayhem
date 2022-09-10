@@ -20,6 +20,8 @@ public class GoblinProperties : MonoBehaviour
     private bool facingDown;  // For determining which way the player is currently facing.
     public float goblinsTurnRadius = 0.1f;
 
+    private int healthTest = 3;
+
     void Start()
     {
         playerG = GameObject.Find("Player");
@@ -61,6 +63,19 @@ public class GoblinProperties : MonoBehaviour
         else if (movement.y < 0)
         {
             animator.SetFloat("Vertical", 0f);  //Goblin shows face
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "bullet")
+        {
+            healthTest = -1;
+            if (healthTest <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Goblin
   - Enemy
+  - Bullet
+  - Weapon
   layers:
   - Default
   - TransparentFX

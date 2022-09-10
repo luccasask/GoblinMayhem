@@ -13,39 +13,28 @@ public class GunFire : MonoBehaviour
     private Rigidbody2D rb;
     public float bulletForce;
 
-    public bool isShooting;
+    private bool fireAnim;
+    private float fireAnimCountDown;
+    public float muzzleFireDuration;
 
     void Start()
     {
-        isShooting = false;
-        muzzleFire.SetActive(false);
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        //Shoot if mousebutton 0 is pressed.
+        if (Input.GetButtonDown("Fire1"))
         {
-            isShooting = true;
-            GameObject bullet = Instantiate(bulletPrefab, shootingPoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(shootingPoint.right * bulletForce, ForceMode2D.Impulse);
+            Shoot();
         }
-        else
-        {
-            isShooting = false;
-        }
-
-        if(isShooting == true)
-        {
-            muzzleFire.SetActive(true);
-            animator.SetBool("IsShooting", true);
-        }
-        if(!isShooting)
-        {
-            muzzleFire.SetActive(false);
-            animator.SetBool("IsShooting", false);
-        }
-
+    }
+    public void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, shootingPoint.transform.position, Quaternion.identity);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(shootingPoint.right * bulletForce, ForceMode2D.Impulse);
+        print("Shoot");
     }
 }
